@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportadorCNAB.Domain", "ImportadorCNAB.Domain\ImportadorCNAB.Domain.csproj", "{CDD65D41-E8BA-4FF8-A636-09C2A8930598}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportadorCNAB.Shared", "ImportadorCNAB.Shared\ImportadorCNAB.Shared.csproj", "{860E371A-43FF-4EB4-B8ED-D00F9DE96BF0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDD65D41-E8BA-4FF8-A636-09C2A8930598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDD65D41-E8BA-4FF8-A636-09C2A8930598}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDD65D41-E8BA-4FF8-A636-09C2A8930598}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDD65D41-E8BA-4FF8-A636-09C2A8930598}.Release|Any CPU.Build.0 = Release|Any CPU
+		{860E371A-43FF-4EB4-B8ED-D00F9DE96BF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{860E371A-43FF-4EB4-B8ED-D00F9DE96BF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{860E371A-43FF-4EB4-B8ED-D00F9DE96BF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{860E371A-43FF-4EB4-B8ED-D00F9DE96BF0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5BA0DA17-DC98-4809-BAF6-1E03CF995F23}
+	EndGlobalSection
+EndGlobal
