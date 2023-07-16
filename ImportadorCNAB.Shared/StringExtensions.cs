@@ -1,4 +1,5 @@
 ﻿namespace ImportadorCNAB.Shared;
+
 public static class StringExtensions
 {
     /// <summary>
@@ -10,6 +11,7 @@ public static class StringExtensions
     {
         return new string(valor.Where(char.IsDigit).ToArray());
     }
+
     /// <summary>
     /// converte a string para numero
     /// </summary>
