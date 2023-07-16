@@ -8,7 +8,7 @@ public abstract class TipoTransacao : Entity
     protected TipoTransacao()
     { }
 
-    public TipoTransacao(int codigo, string descricao)
+    protected TipoTransacao(int codigo, string descricao)
     {
         Codigo = codigo;
         Descricao = descricao;
