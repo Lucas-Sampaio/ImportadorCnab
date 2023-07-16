@@ -1,5 +1,5 @@
 ﻿using ImportadorCNAB.Domain.Exceptions;
-using ImportadorCNAB.Shared;
+using ImportadorCNAB.Shared.Utils;
 
 namespace ImportadorCNAB.Domain.ClienteAggregate;
 public record CPF
