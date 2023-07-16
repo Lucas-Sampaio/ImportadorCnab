@@ -14,7 +14,7 @@ public class TransacaoTestes
         var data = DateTimeOffset.UtcNow;
         var valor = 10;
         var cartao = "152128498";
-        var tipo = ETipoTransacao.Debito;
+        var tipo = new TransacaoPositiva(1,"boleto");
 
         //Act
         var transacao = new Transacao(data, valor, cartao, tipo);
@@ -23,7 +23,7 @@ public class TransacaoTestes
         Assert.Equal(data, transacao.Data);
         Assert.Equal(valor, transacao.Valor);
         Assert.Equal(cartao, transacao.CartaoUtilizadoNumero);
-        Assert.Equal(tipo, transacao.TipoTransacao);
+        Assert.Equal(tipo.Codigo, transacao.TipoTransacao.Codigo);
         Assert.NotNull(transacao);
     }
 }

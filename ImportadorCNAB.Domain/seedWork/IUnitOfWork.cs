@@ -6,5 +6,5 @@ public interface IUnitOfWork : IDisposable
     /// Confirma as transações
     /// </summary>
     /// <returns></returns>
-    Task<bool> CommitAsync();
+    ValueTask<bool> CommitAsync();
 }
