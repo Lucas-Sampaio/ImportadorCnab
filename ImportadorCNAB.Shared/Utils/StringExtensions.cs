@@ -1,4 +1,4 @@
-﻿namespace ImportadorCNAB.Shared;
+﻿namespace ImportadorCNAB.Shared.Utils;
 
 public static class StringExtensions
 {
