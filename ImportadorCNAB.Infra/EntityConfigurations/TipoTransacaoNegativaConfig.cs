@@ -8,16 +8,16 @@ public class TipoTransacaoNegativaConfig : IEntityTypeConfiguration<TransacaoNeg
 {
     public void Configure(EntityTypeBuilder<TransacaoNegativa> builder)
     {
-         builder.HasData(ObterTransacoesIniciais());
+        builder.HasData(ObterTransacoesIniciais());
     }
 
-    private static List<TipoTransacao> ObterTransacoesIniciais()
+    private static List<TransacaoNegativa> ObterTransacoesIniciais()
     {
-        return new List<TipoTransacao>()
+        return new List<TransacaoNegativa>()
         {
-            new TransacaoNegativa(2,"Boleto"),
-            new TransacaoNegativa(3,"Financiamento"),
-            new TransacaoNegativa(9,"Aluguel")
+            new TransacaoNegativa(2,"Boleto",2),
+            new TransacaoNegativa(3,"Financiamento",3),
+            new TransacaoNegativa(9,"Aluguel",9)
         };
     }
 }

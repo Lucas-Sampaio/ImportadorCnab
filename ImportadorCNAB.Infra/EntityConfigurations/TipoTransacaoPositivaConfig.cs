@@ -15,12 +15,12 @@ public class TipoTransacaoPositivaConfig : IEntityTypeConfiguration<TransacaoPos
     {
         return new List<TipoTransacao>()
         {
-            new TransacaoPositiva(1,"Debito"),
-            new TransacaoPositiva(4,"Crédito"),
-            new TransacaoPositiva(5,"Recebimento Empréstimo"),
-            new TransacaoPositiva(6,"Vendas"),
-            new TransacaoPositiva(7,"Recebimento TED"),
-            new TransacaoPositiva(8,"Recebimento DOC"),
+            new TransacaoPositiva(1,"Debito",1),
+            new TransacaoPositiva(4,"Crédito",4),
+            new TransacaoPositiva(5,"Recebimento Empréstimo",5),
+            new TransacaoPositiva(6,"Vendas",6),
+            new TransacaoPositiva(7,"Recebimento TED",7),
+            new TransacaoPositiva(8,"Recebimento DOC",8),
         };
     }
 }
