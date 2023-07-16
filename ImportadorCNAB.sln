@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportadorCNAB.Domain", "Im
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportadorCNAB.Shared", "ImportadorCNAB.Shared\ImportadorCNAB.Shared.csproj", "{860E371A-43FF-4EB4-B8ED-D00F9DE96BF0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportadorCNAB.Tests", "ImportadorCNAB.Tests\ImportadorCNAB.Tests.csproj", "{15780E08-3FFB-4A21-AB1D-3A264CBE736E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{860E371A-43FF-4EB4-B8ED-D00F9DE96BF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{860E371A-43FF-4EB4-B8ED-D00F9DE96BF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{860E371A-43FF-4EB4-B8ED-D00F9DE96BF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15780E08-3FFB-4A21-AB1D-3A264CBE736E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15780E08-3FFB-4A21-AB1D-3A264CBE736E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15780E08-3FFB-4A21-AB1D-3A264CBE736E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15780E08-3FFB-4A21-AB1D-3A264CBE736E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

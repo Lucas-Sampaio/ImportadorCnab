@@ -11,12 +11,12 @@ public class Transacao
     {
         Data = data;
         Valor = valor;
-        CartaoUtilizado = cartaoUtilizado;
+        CartaoUtilizadoNumero = cartaoUtilizado;
         TipoTransacao = tipoTransacao;
     }
 
     public DateTimeOffset Data { get; init; }
     public decimal Valor { get; init; }
-    public string CartaoUtilizado { get; init; }
+    public string CartaoUtilizadoNumero { get; init; }
     public ETipoTransacao TipoTransacao { get; init; }
 }
