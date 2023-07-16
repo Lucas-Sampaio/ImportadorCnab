@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportadorCNAB.Domain", "ImportadorCNAB.Domain\ImportadorCNAB.Domain.csproj", "{CDD65D41-E8BA-4FF8-A636-09C2A8930598}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImportadorCNAB.Domain", "ImportadorCNAB.Domain\ImportadorCNAB.Domain.csproj", "{CDD65D41-E8BA-4FF8-A636-09C2A8930598}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportadorCNAB.Shared", "ImportadorCNAB.Shared\ImportadorCNAB.Shared.csproj", "{860E371A-43FF-4EB4-B8ED-D00F9DE96BF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImportadorCNAB.Shared", "ImportadorCNAB.Shared\ImportadorCNAB.Shared.csproj", "{860E371A-43FF-4EB4-B8ED-D00F9DE96BF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportadorCNAB.Tests", "ImportadorCNAB.Tests\ImportadorCNAB.Tests.csproj", "{15780E08-3FFB-4A21-AB1D-3A264CBE736E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImportadorCNAB.Tests", "ImportadorCNAB.Tests\ImportadorCNAB.Tests.csproj", "{15780E08-3FFB-4A21-AB1D-3A264CBE736E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportadorCNAB.Infra", "ImportadorCNAB.Infra\ImportadorCNAB.Infra.csproj", "{62365FBC-8BB7-439F-B3FE-C107F9BE107D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImportadorCNAB.Infra", "ImportadorCNAB.Infra\ImportadorCNAB.Infra.csproj", "{62365FBC-8BB7-439F-B3FE-C107F9BE107D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportadorCNAB.Api", "ImportadorCNAB.Api\ImportadorCNAB.Api.csproj", "{0074FFC8-2FCB-4D7C-9A0E-02822EFD38F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{62365FBC-8BB7-439F-B3FE-C107F9BE107D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62365FBC-8BB7-439F-B3FE-C107F9BE107D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62365FBC-8BB7-439F-B3FE-C107F9BE107D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0074FFC8-2FCB-4D7C-9A0E-02822EFD38F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0074FFC8-2FCB-4D7C-9A0E-02822EFD38F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0074FFC8-2FCB-4D7C-9A0E-02822EFD38F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0074FFC8-2FCB-4D7C-9A0E-02822EFD38F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
