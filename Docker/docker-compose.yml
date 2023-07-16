@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+    
+    sql-server:
+        container_name: sql-server
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        ports:
+            - 1433:1433
+        volumes: 
+            - todo-mssql-data:/var/lib/mssql
+        environment:
+           ACCEPT_EULA: "Y"
+           SA_PASSWORD: "MeuDB@123"
+                   
+volumes:
+    todo-mssql-data:
+    
+           
