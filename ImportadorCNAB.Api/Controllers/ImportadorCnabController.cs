@@ -1,6 +1,6 @@
-﻿using ImportadorCNAB.Api.Application.Commands.ArquivoCnabComand;
+﻿using FluentValidation.Results;
+using ImportadorCNAB.Api.Application.Commands.ArquivoCnabComand;
 using ImportadorCNAB.Shared.Communication.Mediator;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ImportadorCNAB.Api.Controllers;
@@ -21,7 +21,18 @@ public class ImportadorCnabController : ControllerBase
     {
         var comando = new ProcessarArquivoCnabCommand(file);
 
-        await _mediator.EnviarComando(comando);
+        var result = await _mediator.EnviarComando(comando);
+        if (!result.IsValid)
+            return BadRequest(CriarMsgErro(result));
+
         return Ok();
+    }
+
+    private ValidationProblemDetails CriarMsgErro(ValidationResult validationsResult)
+    {
+        return new ValidationProblemDetails(new Dictionary<string, string[]>
+            {
+                {"Mensagens", validationsResult.Errors.Select(x => x.ErrorMessage).ToArray()}
+            });
     }
 }
