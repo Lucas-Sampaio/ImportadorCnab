@@ -1,5 +1,5 @@
-﻿using ImportadorCNAB.Infra;
-using Microsoft.AspNetCore.Hosting;
+﻿using ImportadorCNAB.Api.Filters;
+using ImportadorCNAB.Infra;
 using Microsoft.EntityFrameworkCore;
 
 namespace ImportadorCNAB.Api.Configuration;
@@ -8,10 +8,11 @@ public static class ApiConfig
 {
     public static void AddApiConfiguration(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddControllers();
+        services.AddControllers(options =>
+        options.Filters.Add(typeof(HttpGlobalExceptionFilter)));
+
         services.AddEndpointsApiExplorer();
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Program>());
-
 
         var connection = configuration.GetConnectionString("SQLConnection");
 
