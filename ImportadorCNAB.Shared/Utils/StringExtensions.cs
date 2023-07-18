@@ -13,7 +13,7 @@ public static class StringExtensions
     }
 
     /// <summary>
-    /// converte a string para numero
+    /// converte a string para numero int
     /// </summary>
     /// <param name="valor"></param>
     /// <param name="valorPadrao">valor de retorno padrão caso string seja vazia</param>
@@ -24,5 +24,19 @@ public static class StringExtensions
             return valorPadrao;
 
         return Convert.ToInt32(valor);
+    }
+
+    /// <summary>
+    /// converte a string para numero decimal
+    /// </summary>
+    /// <param name="valor"></param>
+    /// <param name="valorPadrao">valor de retorno padrão caso string seja vazia</param>
+    /// <returns></returns>
+    public static decimal ToDecimal(this string valor, int valorPadrao = 0)
+    {
+        if (string.IsNullOrWhiteSpace(valor))
+            return valorPadrao;
+
+        return Convert.ToDecimal(valor);
     }
 }
