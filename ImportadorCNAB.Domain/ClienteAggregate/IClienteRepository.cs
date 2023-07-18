@@ -4,7 +4,8 @@ namespace ImportadorCNAB.Domain.ClienteAggregate;
 
 public interface IClienteRepository : IRepository<Cliente>
 {
-    ValueTask AdicionarClienteAsync(Cliente cliente);
-    ValueTask AdicionarClientesAsync(List<Cliente> clientes);
-    ValueTask AdicionarTransacoesAsync(int clienteId, List<Transacao> transacoes);
+    ValueTask AdicionarClientesAsync(List<Cliente> clientes, CancellationToken cancellation);
+    ValueTask AtualizarClientesAsync(List<Cliente> clientes, CancellationToken cancellation);
+    ValueTask<List<Cliente>> ObterClientes(IEnumerable<string> nomesLoja, CancellationToken cancellation);
+    ValueTask<List<TipoTransacao>> ObterTiposTransacoes(IEnumerable<int> codigos, CancellationToken cancellation);
 }
