@@ -23,8 +23,6 @@ public class ClienteContext : DbContext, IUnitOfWork
         optionsBuilder.EnableDetailedErrors();
 #endif
 
-        optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTrackingWithIdentityResolution);
-
         base.OnConfiguring(optionsBuilder);
     }
 

@@ -1,9 +1,10 @@
 ﻿using ImportadorCNAB.Domain.ClienteAggregate;
 using ImportadorCNAB.Domain.seedWork;
+using Microsoft.EntityFrameworkCore;
 
 namespace ImportadorCNAB.Infra.Repositories;
 
-internal class ClienteRepository : IClienteRepository
+public class ClienteRepository : IClienteRepository
 {
     private readonly ClienteContext _context;
 
@@ -14,14 +15,24 @@ internal class ClienteRepository : IClienteRepository
 
     public IUnitOfWork UnitOfWork => _context;
 
-    public async ValueTask AdicionarClienteAsync(Cliente cliente) =>
-        await _context.Clientes.AddAsync(cliente);
+    public async ValueTask AdicionarClientesAsync(List<Cliente> clientes, CancellationToken cancellation) =>
+        await _context.Clientes.AddRangeAsync(clientes, cancellation);
 
-    public async ValueTask AdicionarClientesAsync(List<Cliente> clientes) =>
-        await _context.Clientes.AddRangeAsync(clientes);
-
-    public ValueTask AdicionarTransacoesAsync(int clienteId, List<Transacao> transacoes)
+    public ValueTask AtualizarClientesAsync(List<Cliente> clientes, CancellationToken cancellation)
     {
-                throw new NotImplementedException();
+        _context.Clientes.UpdateRange(clientes);
+        return ValueTask.CompletedTask;
     }
+
+    public async ValueTask<List<Cliente>> ObterClientes(IEnumerable<string> nomesLoja, CancellationToken cancellation) =>
+        await _context.Clientes
+          .Include(x => x.Transacoes)
+          .Where(x => nomesLoja.Contains(x.NomeLoja))
+          .ToListAsync(cancellation);
+
+    public async ValueTask<List<TipoTransacao>> ObterTiposTransacoes(IEnumerable<int> codigos,
+        CancellationToken cancellation) =>
+        await _context.TiposTransacoes
+          .Where(x => codigos.Contains(x.Codigo))
+          .ToListAsync(cancellation);
 }

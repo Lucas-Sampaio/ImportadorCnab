@@ -1,4 +1,5 @@
 ﻿using ImportadorCNAB.Infra;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 
 namespace ImportadorCNAB.Api.Configuration;
@@ -9,6 +10,8 @@ public static class ApiConfig
     {
         services.AddControllers();
         services.AddEndpointsApiExplorer();
+        services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Program>());
+
 
         var connection = configuration.GetConnectionString("SQLConnection");
 
