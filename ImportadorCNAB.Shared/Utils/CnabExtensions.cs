@@ -90,6 +90,6 @@ public static class CnabExtensions
     /// <returns></returns>
     public static string CnabObterNomeLoja(this string valor)
     {
-        return valor[62..80].Trim();
+        return valor[62..].Trim();
     }
 }

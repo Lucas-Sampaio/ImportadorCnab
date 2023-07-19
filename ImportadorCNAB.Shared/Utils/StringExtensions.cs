@@ -32,7 +32,7 @@ public static class StringExtensions
     /// <param name="valor"></param>
     /// <param name="valorPadrao">valor de retorno padrão caso string seja vazia</param>
     /// <returns></returns>
-    public static decimal ToDecimal(this string valor, int valorPadrao = 0)
+    public static decimal ToDecimal(this string valor, decimal valorPadrao = 0)
     {
         if (string.IsNullOrWhiteSpace(valor))
             return valorPadrao;
