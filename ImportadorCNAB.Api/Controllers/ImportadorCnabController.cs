@@ -17,11 +17,11 @@ public class ImportadorCnabController : ControllerBase
     }
 
     [HttpPost("")]
-    public async Task<IActionResult> Post(IFormFile file)
+    public async Task<IActionResult> Post(IFormFile file, CancellationToken cancellation)
     {
         var comando = new ProcessarArquivoCnabCommand(file);
 
-        var result = await _mediator.EnviarComando(comando);
+        var result = await _mediator.EnviarComando(comando, cancellation);
         if (!result.IsValid)
             return BadRequest(CriarMsgErro(result));
 

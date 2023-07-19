@@ -5,5 +5,5 @@ namespace ImportadorCNAB.Shared.Communication.Mediator;
 
 public interface IMediatorHandler
 {
-    Task<ValidationResult> EnviarComando<T>(T comando) where T : Command;
+    Task<ValidationResult> EnviarComando<T>(T comando, CancellationToken ct = default) where T : Command;
 }
