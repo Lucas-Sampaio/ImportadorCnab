@@ -1,5 +1,6 @@
 ﻿using FluentValidation.Results;
 using ImportadorCNAB.Api.Application.Commands.ArquivoCnabComand;
+using ImportadorCNAB.Api.Application.Queries;
 using ImportadorCNAB.Domain.ClienteAggregate;
 using ImportadorCNAB.Infra.Repositories;
 using ImportadorCNAB.Shared.Communication.Mediator;
@@ -27,10 +28,8 @@ public static class DependencyInjectionConfig
         //services.AddScoped<INotificationHandler<PessoaAtualizadaEvent>, PessoaEventHandler>();
 
         ////queries
-        //services.AddScoped<IPessoaQuery, PessoaQuery>();
-
+        services.AddScoped<IClienteQuery, ClienteQuery>();
 
         services.AddScoped<IClienteRepository, ClienteRepository>();
     }
 }
-
