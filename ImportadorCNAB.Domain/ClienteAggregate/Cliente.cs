@@ -31,4 +31,11 @@ public class Cliente : Entity, IAggregateRoot
     {
         _transacoes.AddRange(transacoes);
     }
+    public decimal ObterValorTotalSaldo()
+    {
+        var transacoesPositivas = _transacoes.Where(x => x.TipoTransacao is TransacaoPositiva).Sum(x => x.Valor);
+        var transacoesNegativas = _transacoes.Where(x => x.TipoTransacao is TransacaoNegativa).Sum(x => x.Valor);
+        var valorTotal = transacoesPositivas - transacoesNegativas;
+        return valorTotal;
+    }
 }
