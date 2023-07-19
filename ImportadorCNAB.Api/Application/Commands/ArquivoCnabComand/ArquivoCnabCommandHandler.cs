@@ -96,7 +96,7 @@ public class ArquivoCnabCommandHandler : CommandHandler,
         var donoLoja = linha.CnabObterNomeDonoLoja();
         var NomeLoja = linha.CnabObterNomeLoja();
         var cpf = linha.CnabObterCpf();
-        var cliente = new Cliente(NomeLoja.Trim(), donoLoja.Trim(), new CPF(cpf));
+        var cliente = new Cliente(NomeLoja, donoLoja, new CPF(cpf));
         return cliente;
     }
 
