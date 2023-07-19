@@ -15,7 +15,16 @@ public class ImportadorCnabController : ControllerBase
     {
         _mediator = mediator;
     }
-
+    /// <summary>
+    /// Importar um arquivo cnab para uma base de dados
+    /// </summary>
+    /// <param name="file">arquivo cnab txt</param>
+    /// <param name="cancellation"></param>
+    /// <returns></returns>
+    /// <response code="200">Retorna status code 200</response>
+    /// <response code="400">Retorna um objeto com o erro</response>
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [HttpPost("")]
     public async Task<IActionResult> Post(IFormFile file, CancellationToken cancellation)
     {
