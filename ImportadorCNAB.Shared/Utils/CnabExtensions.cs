@@ -40,7 +40,7 @@ public static class CnabExtensions
     /// <returns></returns>
     public static string CnabObterValor(this string valor)
     {
-        return valor[9..19];
+        return valor[9..19].Trim();
     }
 
     /// <summary>
@@ -50,7 +50,7 @@ public static class CnabExtensions
     /// <returns></returns>
     public static string CnabObterCpf(this string valor)
     {
-        return valor[19..30];
+        return valor[19..30].Trim();
     }
 
     /// <summary>
@@ -60,7 +60,7 @@ public static class CnabExtensions
     /// <returns></returns>
     public static string CnabObterCartao(this string valor)
     {
-        return valor[30..42];
+        return valor[30..42].Trim();
     }
 
     /// <summary>
@@ -70,7 +70,7 @@ public static class CnabExtensions
     /// <returns></returns>
     public static string CnabObterHora(this string valor)
     {
-        return valor[42..48];
+        return valor[42..48].Trim();
     }
 
     /// <summary>
@@ -80,7 +80,7 @@ public static class CnabExtensions
     /// <returns></returns>
     public static string CnabObterNomeDonoLoja(this string valor)
     {
-        return valor[48..62];
+        return valor[48..62].Trim();
     }
 
     /// <summary>
@@ -90,6 +90,6 @@ public static class CnabExtensions
     /// <returns></returns>
     public static string CnabObterNomeLoja(this string valor)
     {
-        return valor[62..80];
+        return valor[62..80].Trim();
     }
 }
