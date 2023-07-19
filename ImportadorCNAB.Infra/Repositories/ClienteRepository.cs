@@ -30,9 +30,24 @@ public class ClienteRepository : IClienteRepository
           .Where(x => nomesLoja.Contains(x.NomeLoja))
           .ToListAsync(cancellation);
 
+    public async ValueTask<List<(int id, string nomeLoja)>> ObterLojas(CancellationToken cancellation)
+    {
+        var lojas = await _context.Clientes
+            .Select(x => new { x.Id, x.NomeLoja })
+          .ToListAsync(cancellation);
+
+        return lojas.ConvertAll(x => (x.Id, x.NomeLoja));
+    }
+
     public async ValueTask<List<TipoTransacao>> ObterTiposTransacoes(IEnumerable<int> codigos,
         CancellationToken cancellation) =>
         await _context.TiposTransacoes
           .Where(x => codigos.Contains(x.Codigo))
           .ToListAsync(cancellation);
+
+    public async ValueTask<Cliente?> ObterCliente(int clienteId, CancellationToken cancellation) =>
+        await _context.Clientes
+         .Include(x => x.Transacoes)
+         .ThenInclude(x => x.TipoTransacao)
+         .FirstOrDefaultAsync(x => x.Id == clienteId, cancellation);
 }
