@@ -1,4 +1,5 @@
-﻿using ImportadorCNAB.Web.Services;
+﻿using ImportadorCNAB.Web.Models;
+using ImportadorCNAB.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -8,17 +9,24 @@ public class IndexModel : PageModel
 {
     private readonly ILogger<IndexModel> _logger;
     private readonly IImportadorCNABService _importador;
+    private readonly IClienteService _clienteService;
     public bool ShowSuccessMessage { get; set; }
     public string? MensagemErro { get; set; }
 
-    public IndexModel(ILogger<IndexModel> logger, IImportadorCNABService importador)
+    public List<LojaVM> Lojas { get; set; }
+
+    public IndexModel(ILogger<IndexModel> logger, IImportadorCNABService importador, IClienteService clienteService)
     {
         _logger = logger;
         _importador = importador;
+        _clienteService = clienteService;
     }
 
-    public void OnGet()
+    public async Task<IActionResult> OnGet()
     {
+        var result = await _clienteService.ObterLojas();
+        Lojas = result.lojas ?? new List<LojaVM>();
+        return Page();
     }
 
     public async Task<IActionResult> OnPostAsync(IFormFile fileInput)

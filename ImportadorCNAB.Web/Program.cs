@@ -5,9 +5,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-var baseUrlApi = builder.Configuration.GetValue<string>("Base_url_ImportadorApi");
+var baseUrlApi = builder.Configuration.GetValue<string>("Base_url_Api");
 
 builder.Services.AddHttpClient<IImportadorCNABService, ImportadorCNABService>()
+    .ConfigureHttpClient(x =>
+    {
+        x.BaseAddress = new Uri(baseUrlApi);
+    });
+
+builder.Services.AddHttpClient<IClienteService, ClienteService>()
     .ConfigureHttpClient(x =>
     {
         x.BaseAddress = new Uri(baseUrlApi);

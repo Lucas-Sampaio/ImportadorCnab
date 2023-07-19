@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImportadorCNAB.Infra", "Imp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImportadorCNAB.Api", "ImportadorCNAB.Api\ImportadorCNAB.Api.csproj", "{0074FFC8-2FCB-4D7C-9A0E-02822EFD38F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportadorCNAB.Web", "ImportadorCNAB.Web\ImportadorCNAB.Web.csproj", "{75E38F96-786E-45BB-9EE5-8991F7F28A92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImportadorCNAB.Web", "ImportadorCNAB.Web\ImportadorCNAB.Web.csproj", "{75E38F96-786E-45BB-9EE5-8991F7F28A92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

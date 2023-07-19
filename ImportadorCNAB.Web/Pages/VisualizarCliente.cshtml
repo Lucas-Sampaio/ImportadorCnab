@@ -1,0 +1,38 @@
+﻿@page "{id:int}"
+@model ImportadorCNAB.Web.Pages.VisualizarClienteModel
+@{
+    ViewData["Title"] = "Cliente page";
+}
+
+
+
+<div class="card">
+    <h5 class="card-header">@Model.Cliente.NomeLoja  <span>Saldo Total: @Model.Cliente.SaldoTotal </span></h5>
+    <div class="card-body">
+
+        <h1>Listagem de Transações</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Cartão</th>
+                    <th>Tipo de Transação</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var transacao in Model.Cliente.Transacoes)
+                {
+                    <tr>
+                        <td>@transacao.Data</td>
+                        <td>@transacao.Cartao</td>
+                        <td>@transacao.TipoTransacao</td>
+                        <td>@transacao.Valor</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
