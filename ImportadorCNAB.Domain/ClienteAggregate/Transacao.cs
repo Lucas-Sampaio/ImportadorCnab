@@ -1,5 +1,4 @@
 ﻿using ImportadorCNAB.Domain.seedWork;
-using ImportadorCNAB.Domain.Shared.Enums;
 
 namespace ImportadorCNAB.Domain.ClienteAggregate;
 
