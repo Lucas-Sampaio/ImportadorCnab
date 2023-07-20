@@ -17,7 +17,7 @@ e uma [CommandStack](https://github.com/Lucas-Sampaio/ExemploCQRS/tree/master/sr
 
 ### 🛠 Como usar
  1. Baixe o projeto
- 2.Abra o seu cmd acesse a pasta [docker](https://github.com/Lucas-Sampaio/ImportadorCnab/tree/master/Docker) e rode o comando-> ```docker-compose up -d```
+ 2. Abra o seu cmd acesse a pasta [docker](https://github.com/Lucas-Sampaio/ImportadorCnab/tree/master/Docker) e rode o comando-> ```docker-compose up -d```
  isso irá subir os serviços necessario pro projeto.
  3. Para acessar a api pelo seu navegador acesse o link http://localhost:8001/swagger/index.html
  4. Para acessar o projeto web acesse http://localhost:8002/
