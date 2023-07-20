@@ -33,8 +33,8 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Moq](https://github.com/moq/moq)
 - [FluentValidation](https://github.com/FluentValidation/FluentValidation)
 - [Xabaril/HealthCheck](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks)
- #### HealthCheck Uri - localhost:'porta'/api/hc-ui
-  ![Alt text](/Assets/healthcheck.png?raw=true "Fluxo")
+ #### HealthCheck Uri - http://localhost:8001/api/hc-dashboard#/healthchecks
+  ![Alt text](/Assets/print-hc-ui.png?raw=true "hc")
 
 # Documentação do CNAB
 
