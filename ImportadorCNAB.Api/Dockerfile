@@ -8,10 +8,19 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["ImportadorCNAB.Api/ImportadorCNAB.Api.csproj", "ImportadorCNAB.Api/"]
+COPY ["ImportadorCNAB.Infra/ImportadorCNAB.Infra.csproj", "ImportadorCNAB.Infra/"]
+COPY ["ImportadorCNAB.Domain/ImportadorCNAB.Domain.csproj", "ImportadorCNAB.Domain/"]
+COPY ["ImportadorCNAB.Shared/ImportadorCNAB.Shared.csproj", "ImportadorCNAB.Shared/"]
 RUN dotnet restore "ImportadorCNAB.Api/ImportadorCNAB.Api.csproj"
 COPY . .
 WORKDIR "/src/ImportadorCNAB.Api"
 RUN dotnet build "ImportadorCNAB.Api.csproj" -c Release -o /app/build
+
+# Configurar o certificado de desenvolvedor HTTPS
+#RUN dotnet dev-certs https --clean
+#RUN dotnet dev-certs https --trust
+#RUN dotnet dev-certs https --check --trust
+
 
 FROM build AS publish
 RUN dotnet publish "ImportadorCNAB.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
