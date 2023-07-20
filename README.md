@@ -28,6 +28,10 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - [.Net 7](https://github.com/dotnet)
 - [Ef Core Sql Server](https://github.com/dotnet/efcore)
+- [Mediator](https://github.com/jbogard/MediatR)
+- [Xunit](https://github.com/xunit/xunit)
+- [Moq](https://github.com/moq/moq)
+- [FluentValidation](https://github.com/FluentValidation/FluentValidation)
 - [Xabaril/HealthCheck](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks)
  #### HealthCheck Uri - localhost:'porta'/api/hc-ui
   ![Alt text](/Assets/healthcheck.png?raw=true "Fluxo")
