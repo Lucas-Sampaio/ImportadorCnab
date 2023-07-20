@@ -7,13 +7,52 @@ services:
         image: mcr.microsoft.com/mssql/server:2022-latest
         ports:
             - 1433:1433
-        volumes: 
-            - todo-mssql-data:/var/lib/mssql
         environment:
            ACCEPT_EULA: "Y"
-           SA_PASSWORD: "MeuDB@123"
-                   
+           SA_PASSWORD: "MeuDB@123"    
+        volumes: 
+            - todo-mssql-data:/var/lib/mssql
+        networks:
+            - minha_rede    
+     
+ 
+    api-importadorcnab:
+        image: lucas29/importadorcnab-api:latest
+        container_name: importadorcnab-api  
+        build:
+            context: ../
+            dockerfile: ./ImportadorCNAB.Api/Dockerfile    
+        restart: always 
+        ports: 
+            - 8001:80
+        environment: 
+            - ASPNETCORE_ENVIRONMENT=Production
+            # - ASPNETCORE_URLS=http://+9000
+        networks:
+            - minha_rede    
+        depends_on:
+            - sql-server
+
+    web-importadorcnab:
+        image: lucas29/importadorcnab-web:latest
+        container_name: importadorcnab-web  
+        build:
+            context: ../
+            dockerfile: ./ImportadorCNAB.Web/Dockerfile    
+        restart: always 
+        ports: 
+            - 8002:80
+        environment: 
+            - ASPNETCORE_ENVIRONMENT=Production
+        networks:
+         - minha_rede    
+        depends_on:
+            - api-importadorcnab                        
 volumes:
     todo-mssql-data:
+
+networks:
+  minha_rede:
+    driver: bridge
     
            
