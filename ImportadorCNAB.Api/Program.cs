@@ -8,15 +8,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddApiConfiguration(builder.Configuration);
 builder.Services.RegisterServices();
-
+builder.Services.AddCustomHealthChecks(builder.Configuration, builder.Environment);
 //swagger
 builder.Services.AddSwaggerConfiguration();
 
 var app = builder.Build();
 
 app.UseSwaggerConfiguration();
-
 app.UseAuthorization();
 app.UseApiConfiguration();
+app.UseCustomHealthCheckConfiguration();
 
 app.Run();
