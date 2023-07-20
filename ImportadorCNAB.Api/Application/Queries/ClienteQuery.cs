@@ -26,7 +26,7 @@ public class ClienteQuery : IClienteQuery
             new TransacaoDto
             {
                 Cartao = x.CartaoUtilizadoNumero,
-                Data = x.Data.DateTime,
+                Data = x.Data.DateTime, //x.Data.LocalDateTime,
                 TipoTransacao = x.TipoTransacao.Descricao,
                 Valor = x.Valor
             }).ToList()
