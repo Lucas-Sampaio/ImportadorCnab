@@ -24,8 +24,7 @@ public class IndexModel : PageModel
 
     public async Task<IActionResult> OnGet()
     {
-        var result = await _clienteService.ObterLojas();
-        Lojas = result.lojas ?? new List<LojaVM>();
+        await PreencherLojas();
         return Page();
     }
 
@@ -41,6 +40,7 @@ public class IndexModel : PageModel
         var result = await _importador.ImportarArquivoCnab(fileInput);
         if (result.sucesso)
         {
+            await PreencherLojas();
             ShowSuccessMessage = true;
             return Page();
         }
@@ -51,5 +51,15 @@ public class IndexModel : PageModel
             MensagemErro = "Ocoreu um erro na hora de importar o arquivo";
             return Page();
         }
+    }
+
+    private async ValueTask PreencherLojas()
+    {
+        var result = await _clienteService.ObterLojas();
+        if (!string.IsNullOrWhiteSpace(result.erro))
+        {
+            _logger.LogError(result.erro);
+        }
+        Lojas = result.lojas ?? new List<LojaVM>();
     }
 }
