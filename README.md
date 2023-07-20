@@ -34,7 +34,8 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 # Documentação do CNAB
 
-Exemplo de uma linha valida -> 3201903010000014200096206760174753****3153153453JOÃO MACEDO   BAR DO JOÃO       
+Exemplo de uma linha valida: 
+3201903010000014200096206760174753****3153153453JOÃO MACEDO   BAR DO JOÃO       
 
 | Descrição do campo  | Inicio | Fim | Tamanho | Comentário
 | ------------- | ------------- | -----| ---- | ------
