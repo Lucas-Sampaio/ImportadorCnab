@@ -1,4 +1,5 @@
-﻿using ImportadorCNAB.Api.Application.Queries;
+﻿using ImportadorCNAB.Api.Application.Dtos;
+using ImportadorCNAB.Api.Application.Queries;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ImportadorCNAB.Api.Controllers;
@@ -20,7 +21,7 @@ public class ClienteController : ControllerBase
     /// <param name="cancellation"></param>
     /// <returns>lista de loja com id e nome</returns>
     /// <response code="200">Retorna status code 200 com uma lista de loja</response>
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<LojaDto>))]
     [HttpGet("ObterLojas")]
     public async Task<IActionResult> GetLojas(CancellationToken cancellation)
     {
@@ -37,8 +38,8 @@ public class ClienteController : ControllerBase
     /// <returns>Um cliente com sua transacoes</returns>
     /// <response code="200">Retorna status code 200 com info do cliente</response>
     /// <response code="404">Retorna status code 404</response>
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ClienteDto))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = null)]
     [HttpGet("{clienteId}")]
     public async Task<IActionResult> GetCliente(int clienteId, CancellationToken cancellation)
     {

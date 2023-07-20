@@ -24,7 +24,7 @@ public class ImportadorCnabController : ControllerBase
     /// <response code="200">Retorna status code 200</response>
     /// <response code="400">Retorna um objeto com o erro</response>
     [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest,Type = typeof(ValidationProblemDetails))]
     [HttpPost("")]
     public async Task<IActionResult> Post(IFormFile file, CancellationToken cancellation)
     {
