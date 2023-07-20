@@ -12,12 +12,12 @@ Demostrar o uso de cqrs,  o projeto é um crud de pessoa básico onde ao salvar 
 ele esta separado em [QueryStack](https://github.com/Lucas-Sampaio/ExemploCQRS/tree/master/src/API/Application/Queries) onde tem uma classe que vai ser responsavel por trazer as
 consultas do banco mongodb
 e uma [CommandStack](https://github.com/Lucas-Sampaio/ExemploCQRS/tree/master/src/API/Application/Commands) que vai ser responsavel por fazer a escrita no banco sql server
-#### Fluxo do projeto
-![Alt text](/Assets/FluxoCqrs2.png?raw=true "Fluxo")
+#### Imagem Api
+![Alt text](/Assets/ApiInportadorcnab.png?raw=true "Api")
 
 ### 🛠 Como usar
  1. Baixe o projeto
- 2.Abra o seu cmd acesse a pasta [docker](https://github.com/Lucas-Sampaio/ImportadorCnab/tree/master/Docker) e rode o comando-> ```docker-compose up -d```
+ 2. Abra o seu cmd acesse a pasta [docker](https://github.com/Lucas-Sampaio/ImportadorCnab/tree/master/Docker) e rode o comando-> ```docker-compose up -d```
  isso irá subir os serviços necessario pro projeto.
  3. Para acessar a api pelo seu navegador acesse o link http://localhost:8001/swagger/index.html
  4. Para acessar o projeto web acesse http://localhost:8002/
@@ -28,6 +28,10 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - [.Net 7](https://github.com/dotnet)
 - [Ef Core Sql Server](https://github.com/dotnet/efcore)
+- [Mediator](https://github.com/jbogard/MediatR)
+- [Xunit](https://github.com/xunit/xunit)
+- [Moq](https://github.com/moq/moq)
+- [FluentValidation](https://github.com/FluentValidation/FluentValidation)
 - [Xabaril/HealthCheck](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks)
  #### HealthCheck Uri - localhost:'porta'/api/hc-ui
   ![Alt text](/Assets/healthcheck.png?raw=true "Fluxo")
