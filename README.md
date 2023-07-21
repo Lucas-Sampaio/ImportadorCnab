@@ -15,7 +15,7 @@ e uma [CommandStack](https://github.com/Lucas-Sampaio/ExemploCQRS/tree/master/sr
 #### Imagem Api
 ![Alt text](/Assets/ApiInportadorcnab.png?raw=true "Api")
 
-#### Imagem Api
+#### Imagens Web
 ![Alt text](/Assets/Web-tela1.png?raw=true "webhome1")
 ![Alt text](/Assets/Web-tela2.png?raw=true "webhome2")
 ![Alt text](/Assets/Web-tela3.png?raw=true "webdetalhe")
