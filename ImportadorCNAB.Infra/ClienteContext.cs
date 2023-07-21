@@ -42,9 +42,9 @@ public class ClienteContext : DbContext, IUnitOfWork
         base.ConfigureConventions(configurationBuilder);
     }
 
-    public async ValueTask<bool> CommitAsync()
+    public async ValueTask<bool> CommitAsync(CancellationToken cancellation)
     {
-        var sucesso = await base.SaveChangesAsync() > 0;
+        var sucesso = await base.SaveChangesAsync(cancellation) > 0;
         return sucesso;
     }
 }

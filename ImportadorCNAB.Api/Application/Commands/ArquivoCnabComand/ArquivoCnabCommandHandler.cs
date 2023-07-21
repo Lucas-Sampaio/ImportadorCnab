@@ -30,7 +30,7 @@ public class ArquivoCnabCommandHandler : CommandHandler,
         await _clienteRepository.AtualizarClientesAsync(clientesParaAtualizar, cancellationToken);
 
         await _clienteRepository.AdicionarClientesAsync(clientesNovos.ToList(), cancellationToken);
-        await _clienteRepository.UnitOfWork.CommitAsync();
+        await _clienteRepository.UnitOfWork.CommitAsync(cancellationToken);
 
         return request.ValidationResult;
     }
