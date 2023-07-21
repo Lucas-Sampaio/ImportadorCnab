@@ -23,7 +23,7 @@
 
         <h1>Listagem de Lojas</h1>
 
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -47,3 +47,50 @@
     
     }
 </div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('form').on('submit', function (event) {
+                event.preventDefault(); // Evitar o comportamento padrão de enviar o formulário
+
+                // Criar um objeto FormData para enviar o arquivo
+                var formData = new FormData(this);
+
+                // Fazer a requisição AJAX para o método OnPostAsync()
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Page("Index", "OnPostAsync")',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        if(data)
+                        {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Arquivo importado com sucesso',
+                            })
+                        }
+                        else
+                        {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Ocoreu um erro ao importa arquivo!'
+                            })
+                        }
+                    },
+                    error: function (erro) {
+                        console.log(erro);
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Ocoreu um erro na solicitacao!'
+                        })
+                    }
+                });
+            });
+        });
+    </script>
+    }

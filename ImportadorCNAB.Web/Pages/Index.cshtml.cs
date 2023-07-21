@@ -30,27 +30,19 @@ public class IndexModel : PageModel
 
     public async Task<IActionResult> OnPostAsync(IFormFile fileInput)
     {
+        await PreencherLojas();
+
         if (fileInput is null || fileInput.Length == 0)
         {
-            ShowSuccessMessage = false;
-            MensagemErro = "Arquivo invalido";
-            return Page();
+            _logger.LogError("arquivo nulou ou vazio");
+            return new JsonResult(false);
         }
 
         var result = await _importador.ImportarArquivoCnab(fileInput);
-        if (result.sucesso)
-        {
-            await PreencherLojas();
-            ShowSuccessMessage = true;
-            return Page();
-        }
-        else
-        {
+        if (!result.sucesso)
             _logger.LogError(result.erro);
-            ShowSuccessMessage = false;
-            MensagemErro = "Ocoreu um erro na hora de importar o arquivo";
-            return Page();
-        }
+
+        return new JsonResult(result.sucesso);
     }
 
     private async ValueTask PreencherLojas()
