@@ -1,13 +1,12 @@
 ﻿using ImportadorCNAB.Api.Filters;
 using ImportadorCNAB.Infra;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
 
 namespace ImportadorCNAB.Api.Configuration;
 
 public static class ApiConfig
 {
-    public static void AddApiConfiguration(this IServiceCollection services, IConfiguration configuration)
+    public static void AddApiConfiguration(this IServiceCollection services, IConfiguration configuration, IWebHostEnvironment environment)
     {
         services.AddControllers(options =>
         options.Filters.Add(typeof(HttpGlobalExceptionFilter)));
@@ -23,12 +22,12 @@ public static class ApiConfig
             .UseSqlServer(connection, config => config.EnableRetryOnFailure(3, TimeSpan.FromSeconds(10), null));
         });
 
-        using (var scope = services.BuildServiceProvider())
+        if (!environment.IsEnvironment("Testing"))
         {
+            using var scope = services.BuildServiceProvider();
             var db = scope.GetRequiredService<ClienteContext>();
             db.Database.Migrate();
         }
-
     }
 
     public static void UseApiConfiguration(this WebApplication app)

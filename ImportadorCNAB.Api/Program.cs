@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
-builder.Services.AddApiConfiguration(builder.Configuration);
+builder.Services.AddApiConfiguration(builder.Configuration, builder.Environment);
 builder.Services.RegisterServices();
 builder.Services.AddCustomHealthChecks(builder.Configuration, builder.Environment);
 //swagger
@@ -20,3 +20,4 @@ app.UseApiConfiguration();
 app.UseCustomHealthCheckConfiguration();
 
 app.Run();
+public partial class Program { }
