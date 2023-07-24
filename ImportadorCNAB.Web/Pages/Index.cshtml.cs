@@ -30,7 +30,6 @@ public class IndexModel : PageModel
 
     public async Task<IActionResult> OnPostAsync(IFormFile fileInput)
     {
-        await PreencherLojas();
 
         if (fileInput is null || fileInput.Length == 0)
         {

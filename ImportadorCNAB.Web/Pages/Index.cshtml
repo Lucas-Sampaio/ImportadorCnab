@@ -70,6 +70,15 @@
                             Swal.fire({
                                 icon: 'success',
                                 title: 'Arquivo importado com sucesso',
+                            }).then((response) => {
+
+                                console.log("entrou no then");
+                                console.log(response);
+                                if (response.isConfirmed == true) {
+                                    console.log("entrou no then");
+                                    console.log(response);
+                                    location.reload(true)
+                                }
                             })
                         }
                         else
